@@ -23,7 +23,7 @@ This menu has 4 optiions:
 ## Main Menu:
 The menu has 6 options:
 *1.'Enter Passwords':
-    This makes the user enter their strong passwords whichthey don't need to remember.
+    This makes the user enter their strong passwords or use a suggested 15 charcter password which they don't need to remember.
     ! Just double check all the details or you would have to erase the whole file and start over !
 
 *2.'Read all the Passwords':
