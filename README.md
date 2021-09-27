@@ -6,6 +6,7 @@ This program uses enryption to store your valuable data that is decryptd with th
 # Features in program:
 ## Login Screen:
 This menu has 4 optiions:
+
 *1. 'Enter the Master Password':
     Prompts user for the Master Password to decrypt the data and to go to the main menu.
 
@@ -22,6 +23,7 @@ This menu has 4 optiions:
 
 ## Main Menu:
 The menu has 6 options:
+
 *1.'Enter Passwords':
     This makes the user enter their strong passwords or use a suggested 15 charcter password which they don't need to remember.
     ! Just double check all the details or you would have to erase the whole file and start over !
