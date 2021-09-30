@@ -1,16 +1,24 @@
-import base64
+import pickle
+from passlib.context import CryptContext
 from getpass import getpass
-from endecrypt2 import *
-from endecrypt1 import gen_key
-from encoder import enco 
-from maincsv import *
+import endecrypt
+from endecrypt import gen_key
+from endecrypt import encrypt
+from endecrypt import decrypt
+from endecrypt import encrypt_password
+from endecrypt import check_encrypted_password
+from maincsv import gen_pwd
+from maincsv import entryc
+from maincsv import readc
+from maincsv import searchc
+from maincsv import deletec
 from banners import *
 import random
 
 def banner_p():
-    fn_l = [one, two, three, four, five, six, seven, eight, ninne, ten, eleven, twelve, thirteen, fourteen, fifteen,sixteen, seventeen, eighteen]
-    
+    fn_l = [one, two, three, four, five, six, seven, eight, ninne, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen]
     random.choice(fn_l)()
+
 def login_screen():
     try:
 
@@ -33,15 +41,9 @@ def login_screen():
 
         option = input('> ')
         if option == '1':
-            with open('nothinghere.dat', 'rb') as bt_file:
-                decodedBytes = bt_file.read()
-                decodedStr = str(decodedBytes, 'utf-8')
-                            
-                decoded_pwd = base64.b64decode(decodedStr)
-                str_pwd = decoded_pwd.decode()
-                password = getpass("Enter Master Password:\n> ")
-
-            if str_pwd == password:
+            check_encrypted_password()
+            
+            if endecrypt.check_pwd == True:
                 print('Login Success!')
                 decrypt()
                 main_menu()
@@ -51,12 +53,12 @@ def login_screen():
             
         elif option == 's':
             print('\n')
-            enco()
+            encrypt_password()
             print('\n')
             gen_key()
             print('Great! Now remeber the master passwrd that you encoded as it will not be provided again in future...')
             print("'Remember one Strong Password than a 100 weak ones...'")
-            input("Hit Enter to go to the main menu...\n> ")
+            input("Hit Enter to go to the main menu...> ")
             main_menu()
 
         elif option == 'h':
@@ -64,7 +66,7 @@ def login_screen():
                 reader = manual.read()
                 print(reader)
                 print('\n')
-                input("Hit Enter to return to the login screen...\n> ")
+                input("Hit Enter to return to the login screen...> ")
                 login_screen()
 
         elif option == 'q':
@@ -78,8 +80,9 @@ def login_screen():
         else:
             print('Invalid Option\n')
             login_screen()
-    except KeyboardInterrupt:
-        print("\n")
+            
+    except FileNotFoundError:
+        print('Run the first-time-setup first...')
         login_screen()
         
 
@@ -178,6 +181,9 @@ def main_menu():
         print("\n!!!!!Use 'q' to exit!!!!")
         main_menu()
    
+# prevention of FileNotFoundError 
+with open('data.csv', 'a') as db:
+    pass   
+
 banner_p()
 login_screen()
-

@@ -52,7 +52,7 @@ The menu has 6 options:
 
 !!!!! Ensure that you have ran the following commands before running the script !!!!
 * pip install cryptography
-* pip install base64
+* pip install passlib
 * pip install pandas
 * pip install getpass
 !!!! This installs the dependancies of the python script !!!!
