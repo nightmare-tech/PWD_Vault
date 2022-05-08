@@ -2,6 +2,16 @@
 
 PWD_Vault is a versatile everyday use password manager tool.
 This program uses enryption to store your valuable data that is decryptd with this program.
+
+# How to install:
+Download the zip via `github.com/nightmare-tech/PWD_Vault`  or clone it via git :-
+```
+git clone https://nightmare-tech/PWD_Vault
+```
+    
+   It is a very small repository. So I didn't need another way to install it. And its the easiest :)
+
+
 # How to run:
 
 * For Windows users:
