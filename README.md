@@ -56,6 +56,7 @@ The menu has 6 options:
 * `pip install passlib`
 * `pip install pandas`
 * `pip install getpass`
+
 !!!! This installs the dependancies of the python script !!!!
 
 # Happy Encryption!!
