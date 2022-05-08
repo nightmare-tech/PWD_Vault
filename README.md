@@ -2,6 +2,29 @@
 
 PWD_Vault is a versatile everyday use password manager tool.
 This program uses enryption to store your valuable data that is decryptd with this program.
+# How to run:
+
+* For Windows users:
+    Click on the batch file `PWD_Vault.bat` from your file manager or execute the batch file by typing
+    `PWD_Vault.bat` in your console in the cloned directory (Windows Terminal, cmd etc.) 
+    
+* For Linux users:
+    Make the bash script executable (only need to do one time) :-
+    ```
+    chmod +x PWD_Vault.sh
+    ```
+    Then running the bash script:-
+    ```
+    ./PWD_Vault.sh
+    ```
+
+* Alternative: 
+  Run the python file `PWD_Vault.py` in the directory `PWD_Vault` directly:-
+  ```
+  cd PWD_Vault
+  python3 PWD_Vault.py
+  ```
+    This is what the .bat and .sh scripts do. It just looks neat this way :)
 
 # Features in program:
 ## Login Screen:
