@@ -1,2 +1,2 @@
-passlib==1.7.4
 pandas==1.5.0
+passlib==1.7.4
