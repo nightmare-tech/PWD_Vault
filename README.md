@@ -92,6 +92,7 @@ The menu has 6 options:
 
 Alternative >
 You could run `pip install -r requirements.txt` to install the above packages
+
 !!!! This installs the dependancies of the python script !!!!
 
 # Happy Encryption!!
