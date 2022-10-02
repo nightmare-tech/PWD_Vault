@@ -1,2 +1,1 @@
-cd PWD_Vault.bat
-python PWD_Vault.py
+start cmd.exe /c "cd PWD_Vault & python3 PWD_Vault.py"
