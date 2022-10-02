@@ -1,0 +1,4 @@
+cryptography==38.0.1
+pandas==1.5.0
+passlib==1.7.4
+getpass4==0.0.14.1
