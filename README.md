@@ -1,18 +1,28 @@
 # PWD_Vault
 
 PWD_Vault is a versatile everyday use password manager tool.
-This program uses enryption to store your valuable data that is decryptd with this program.
+This program uses encryption to store your valuable data that is decrypted with this program.
 
 # How to install:
-Download the zip via `github.com/nightmare-tech/PWD_Vault`  or clone it via git :-
+Download the zip via `github.com/nightmare-tech/PWD_Vault` or clone it via git :-
 ```
 git clone https://nightmare-tech/PWD_Vault
 ```
     
-   It is a very small repository. So I didn't need another way to install it. And its the easiest :)
+   It is a very small repository. So, I didn't need another way to install it. And it’s the easiest :)
 
 
 # How to run:
+!!!!! Ensure that you have ran the following commands before running the script!!!!!
+* `pip install cryptography`
+* `pip install passlib`
+* `pip install pandas`
+* `pip install getpass`
+
+Alternative >
+You could run `pip install -r requirements.txt` to install the above package
+
+!!!! This installs the dependencies of the python script !!!!
 
 * For Windows users:
     Click on the batch file `PWD_Vault.bat` from your file manager or execute the batch file by typing
@@ -38,7 +48,7 @@ git clone https://nightmare-tech/PWD_Vault
 
 # Features in program:
 ## Login Screen:
-This menu has 4 optiions:
+This menu has 4 options:
 
 *1. 'Enter the Master Password':
     Prompts user for the Master Password to decrypt the data and to go to the main menu.
@@ -58,7 +68,7 @@ This menu has 4 optiions:
 The menu has 6 options:
 
 *1.'Enter Passwords':
-    This makes the user enter their strong passwords or use a suggested 15 character password which they don't need to remember.
+    This makes the user enter their strong passwords or use a suggested 15-character password which they don't need to remember.
     ! Just double check all the details or you would have to erase the whole file and start over !
 
 *2.'Read all the Passwords':
@@ -70,7 +80,7 @@ The menu has 6 options:
 
 *4. 'Delete a record':
     Let's you delete a record.
-    !!!!However you should input here only what you're asked for and the spelling must be correct otherwise it could deleta unwanted records!!!!
+    !!!!However, you should input here only what you're asked for and the spelling must be correct otherwise it could deleta unwanted records!!!!
 
 *h. 'Help':
     This brought you here. O:)
@@ -83,17 +93,6 @@ The menu has 6 options:
 
 *'banner': Enter in Login Screen or Main Menu to print a stunning ascii art banner.
 
-
-!!!!! Ensure that you have ran the following commands before running the script !!!!!
-* `pip install cryptography`
-* `pip install passlib`
-* `pip install pandas`
-* `pip install getpass`
-
-Alternative >
-You could run `pip install -r requirements.txt` to install the above packages
-
-!!!! This installs the dependancies of the python script !!!!
 
 # Happy Encryption!!
 
