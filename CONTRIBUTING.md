@@ -4,7 +4,7 @@ I am open to, and grateful for, any contributions made by the community to help 
 
 ## How to Contribute
 
-- Take a look at the Existing [Issues](https://github.com/DeveloperAshish8/CodeChamp-s-Website/issues) or create your own Issues!
+- Take a look at the Existing [Issues](https://github.com/nightmare-tech/PWD_Vault/issues) or create your own Issues!
 - Fork the Repo and create a Branch for any Issue that you are working upon.
 - Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
 - Add Screenshots to help us know what this is all about.
