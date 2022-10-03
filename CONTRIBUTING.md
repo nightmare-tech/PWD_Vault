@@ -20,7 +20,7 @@ I am open to, and grateful for, any contributions made by the community to help 
 
 **3.** Navigate to the project directory.
 ```
-   cd CodeChamp-s-Website
+   cd PWD_Vault
 ```
 
 **4.** Set upstream command:
