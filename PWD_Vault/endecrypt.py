@@ -1,3 +1,8 @@
+import os
+import base64
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography.hazmat.backends import default_backend
 from cryptography.fernet import Fernet
 from passlib.context import CryptContext
 import pickle
@@ -10,17 +15,21 @@ pwd_context = CryptContext(
         pbkdf2_sha256__default_rounds=30000
 )
 
-def gen_key():
-   key = Fernet.generate_key()
-   with open('filekey.key', 'wb') as filekey:
-      filekey.write(key)
-      print("Succesfully generated key!")
-      print('\n')
+def gen_key(pwd):
+    # don't touch my trash
+    backend = default_backend()
+    salt = b"1337"
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=100000,
+        backend=backend
+    )
+    
+    return base64.urlsafe_b64encode(kdf.derive(pwd.encode('utf-8')))
 
-def encrypt():
-    with open('filekey.key', 'rb') as filekey:
-        key = filekey.read()
-
+def encrypt(key):
     fernet = Fernet(key)
 
     with open('data.csv', 'rb') as file:
@@ -31,10 +40,7 @@ def encrypt():
     with open('data.csv', 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
 
-def decrypt():
-    with open('filekey.key', 'rb') as filekey:
-        key = filekey.read()
-
+def decrypt(key):
     fernet = Fernet(key)
 
     with open('data.csv', 'rb') as enc_file:
@@ -51,6 +57,7 @@ def encrypt_password():
     with open('m_pwd.dat', 'wb') as pf:
         pickle.dump(en_pwd, pf)
     print("Sucessfully encoded new Master Password!")
+    return pwd_d
 
 def check_encrypted_password():
     pwd_d = getpass("Enter Master Password\n> ")
@@ -59,6 +66,7 @@ def check_encrypted_password():
         hashed = pickle.load(pf)
     global check_pwd
     check_pwd = pwd_context.verify(pwd_e, hashed)
+    return pwd_d
 
 
 if __name__ == '__main__': 
