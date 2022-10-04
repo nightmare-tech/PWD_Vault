@@ -2,7 +2,6 @@ import pickle
 from passlib.context import CryptContext
 from getpass import getpass
 import endecrypt
-from endecrypt import gen_key
 from endecrypt import encrypt
 from endecrypt import decrypt
 from endecrypt import encrypt_password
@@ -15,11 +14,14 @@ from maincsv import deletec
 from banners import *
 import random
 
+global key
+
 def banner_p():
     fn_l = [one, two, three, four, five, six, seven, eight, ninne, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen]
     random.choice(fn_l)()
 
 def login_screen():
+    global key
     try:
 
         print('|-------------------------------------------------------|')
@@ -41,11 +43,11 @@ def login_screen():
 
         option = input('> ')
         if option == '1':
-            check_encrypted_password()
+            key = check_encrypted_password()
             
             if endecrypt.check_pwd == True:
                 print('Login Success!')
-                decrypt()
+                decrypt(key)
                 main_menu()
             else: 
                 print('Wrong Password!!')
@@ -53,10 +55,9 @@ def login_screen():
             
         elif option == 's':
             print('\n')
-            encrypt_password()
+            key = encrypt_password()
             print('\n')
-            gen_key()
-            print('Great! Now remeber the master passwrd that you encoded as it will not be provided again in future...')
+            print('Great! Now remember the master passwrd that you encoded as it will not be provided again in future...')
             print("'Remember one Strong Password than a 100 weak ones...'")
             input("Hit Enter to go to the main menu...> ")
             main_menu()
@@ -88,6 +89,7 @@ def login_screen():
 
 
 def main_menu():
+    global key
     try:
         print('|-------------------------------------------------------|')
         print('|-------------------------------------------------------|')
@@ -166,7 +168,7 @@ def main_menu():
         
         elif option == 'q':
             print('Encrypting Data...')
-            encrypt()
+            encrypt(key)
             print('Exiting...')
             quit()
         
