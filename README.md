@@ -1,7 +1,5 @@
 # PWD_Vault
 
-
-
 PWD_Vault is a versatile everyday use password manager tool.
 
 This program uses encryption to store your password, which can only be decrypted and viewed within the program.
@@ -16,19 +14,20 @@ Download the zip via `github.com/nightmare-tech/PWD_Vault` or clone it via git :
 ```
 git clone https://nightmare-tech/PWD_Vault
 ```
-    
-   It is a very small repository. So, I didn't need another way to install it. And it’s the easiest :)
-
+It is a very small repository. So, I didn't need another way to install it. And it’s the easiest :)
 
 # Run Locally:
-!!!! Ensure that you have install the necessary packages before running the script !!!!
+### Create a virtual env so that it does not break default lib versions 
 ```
-pip install cryptography
-pip install passlib
-pip install pandas
+cd PWD_Vault
+python -m venv .
+source bin/activate
 ```
+!!!  Install the necessary packages !!!
 
-Alternatively, You could run `pip install -r requirements.txt` to install the above packages
+```
+pip install -r requirements.txt
+```
 
 - For Windows users:
     Click on the batch file `PWD_Vault.bat` from your file manager or execute the batch file by typing
