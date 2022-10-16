@@ -2,3 +2,8 @@ data.csv
 filekey.key
 m_pwd.dat
 __pycache__/
+bin/
+include/
+lib/
+lib64
+pyvenv.cfg

@@ -4,56 +4,75 @@ PWD_Vault is a versatile everyday use password manager tool.
 
 This program uses encryption to store your password, which can only be decrypted and viewed within the program.
 
-# Table of Contents
+## Table of Contents
+
 - [Installation](#installation)
-- [Run Locally](#run-locally)
+  - [For Windows Users](#for-windows-users)
+  - [For Linux Users](#for-linux-users)
 - [Features](#features)
-  
-# Installation:
+
+---
+
+## Installation:
+
 Download the zip via `github.com/nightmare-tech/PWD_Vault` or clone it via git :-
+
 ```
 git clone https://nightmare-tech/PWD_Vault
 ```
+
 It is a very small repository. So, I didn't need another way to install it. And it’s the easiest :)
 
-# Run Locally:
-### Create a virtual env so that it does not break default lib versions 
-```
-cd PWD_Vault
-python -m venv .
-source bin/activate
-```
-!!!  Install the necessary packages !!!
+- ### For Windows users
 
-```
-pip install -r requirements.txt
-```
+    ```
+    cd PWD_Vault
+    ```
 
-- For Windows users:
-    Click on the batch file `PWD_Vault.bat` from your file manager or execute the batch file by typing
-    `PWD_Vault.bat` in your console in the cloned directory (Windows Terminal, cmd etc.) 
-    
-- For Linux users:
-    Make the bash script executable (only need to do one time) :-
+ 1. **Create a virtual environment (Optional but recommended)**
+
     ```
-    chmod +x PWD_Vault.sh
+    python -m venv .
+    source bin/activate
     ```
-    Then running the bash script:-
+
+ 2. **Install the necessary packages**
+
     ```
+    pip install -r requirements.txt
+    ```
+
+ 3. **Run the script**
+
+    ```
+    PWD_Vault.bat
+    ```
+
+     OR
+
+    ```
+    cd PWD_Vault
+    python PWD_Vault.py
+    ```
+
+    After you're done deactivate the "venv" by running `deactivate`.
+
+- ### For Linux users
+
+    ```python
+    cd PWD_Vault
     ./PWD_Vault.sh
     ```
 
-- Alternative: 
-  Run the python file `PWD_Vault.py` in the directory `PWD_Vault` directly:-
-  ```
-  cd PWD_Vault
-  python3 PWD_Vault.py
-  ```
-    This is what the .bat and .sh scripts do. It just looks neat this way :)
+    The bash script checks if there is a virtual environment present, if not it makes a "venv" and installs the dependencies there but if you're using it again then it will detect the "venv", activate it and run the script and deactivate the "venv" after exiting.
+    You're Welcome O:)
 
-# Features:
+---
 
-## Login Screen:
+## Features
+
+### Login Screen
+
 This menu has 4 options:
 
 - **1. Enter the Master Password**:
@@ -70,7 +89,8 @@ This menu has 4 options:
 - **q = quit**:
     Exits from the Program
 
-## Main Menu:
+### Main Menu
+
 The menu has 6 options:
 
 - **1. Enter in Record**:
@@ -99,6 +119,4 @@ The menu has 6 options:
 
 - **banner**: Enter in Login Screen or Main Menu to print a stunning ascii art banner.
 
-
-# Happy Encryption!!
-
+## Happy Encryption!!
