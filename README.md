@@ -15,8 +15,8 @@ This program uses encryption to store your password, which can only be decrypted
 
 ## Installation:
 
-Download the zip via `github.com/nightmare-tech/PWD_Vault` or clone it via git :-
-
+Download the zip via `github.com/nightmare-tech/PWD_Vault` After downloading the folder paste the folder in Vs code and you can directly run the code or clone it via git :-
+Its very easy process of pasting folder in Vs code.
 ```
 git clone https://nightmare-tech/PWD_Vault
 ```
@@ -94,7 +94,7 @@ This menu has 4 options:
 The menu has 6 options:
 
 - **1. Enter in Record**:
-    This makes the user enter their strong passwords or use a suggested 15-character password which they don't need to remember.
+    This forces the user to input strong passwords or choose a pre-generated 15-character password that they won't have to remember. Just double verify everything or you'll have to start over by erasing the entire file.
     ! Just double check all the details or you would have to erase the whole file and start over !
 
 - **2. Read all the stored data**:
