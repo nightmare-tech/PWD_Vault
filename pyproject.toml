@@ -7,6 +7,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+cryptography = "38.0.1"
+passlib = "1.7.4"
+cffi = "1.17.1"
+numpy = "2.1.2"
+pandas = "2.2.3"
+pycparser = "2.22"
+python-dateutil = "2.9.0.post0"
+pytz = "2024.2"
+six = "1.16.0"
+tzdata = "2024.2"
 
 
 [build-system]
