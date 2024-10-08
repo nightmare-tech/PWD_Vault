@@ -50,7 +50,7 @@ It is a very small repository. So, I didn't need another way to install it. And 
         ```
         poetry install
 
-            or
+        OR   
         python install_requirements.py
         ```
 
