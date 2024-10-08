@@ -30,17 +30,29 @@ It is a very small repository. So, I didn't need another way to install it. And 
     ```
 
  1. **Create a virtual environment (Optional but recommended)**
-
-    ```
-    python -m venv .
-    source bin/activate
-    ```
-
+    #### virtualvenv
+        ```
+        python -m venv .
+        source bin/activate
+        ```
+         
+    #### poetry-python
+       ```
+        poetry init
+        poetry shell
+        ```
  2. **Install the necessary packages**
+    #### virtualvenv   
+        ```
+        pip install -r requirements.txt
+        ```
+    #### poetry-python
+        ```
+        poetry install
 
-    ```
-    pip install -r requirements.txt
-    ```
+            or
+        python install_requirements.py
+        ```
 
  3. **Run the script**
 
