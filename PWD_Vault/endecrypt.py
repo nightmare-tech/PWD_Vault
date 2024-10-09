@@ -1,5 +1,6 @@
 import os
 import base64
+import cryptography
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.backends import default_backend
@@ -35,54 +36,63 @@ def PBKDF2(data, salt):
 def encrypt(key):
     fernet = Fernet(key)
 
-    with open('data.csv', 'rb') as file:
+    with open('PWD_Vault/PWD_Vault/data.csv', 'rb') as file:
         original = file.read()
 
     encrypted = fernet.encrypt(original)
 
-    with open('data.csv', 'wb') as encrypted_file:
+    with open('PWD_Vault/PWD_Vault/data.csv', 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
 
 def decrypt(key):
     fernet = Fernet(key)
 
-    with open('data.csv', 'rb') as enc_file:
-        encrypted = enc_file.read()
+ 
+        
+def decrypt_data(key):
+    try:
+        fernet = Fernet(key)
+        with open('PWD_Vault/PWD_Vault/data.csv', 'rb') as enc_file:
+            encrypted = enc_file.read()
 
-    decrypted = fernet.decrypt(encrypted)
+        decrypted = fernet.decrypt(encrypted)
+        return decrypted
+    except cryptography.fernet.InvalidToken:
+        print("Decryption failed: Invalid token or incorrect key.")
+        return None
 
-    with open('data.csv', 'wb') as dec_file:
-        dec_file.write(decrypted)
 
 def encrypt_password():
     salt = os.urandom(16)
     
-    with open('salt.dat', 'wb') as f:
+    with open('PWD_Vault/PWD_Vault/salt.dat', 'wb') as f:
         f.write(salt)
        
     pwd_d = input("Enter NEW Master Password\n> ")
     key = PBKDF2(pwd_d, salt)
     en_pwd = B_PBKDF2(key, salt)
-    with open('m_pwd.dat', 'wb') as pf:
+    with open('PWD_Vault/PWD_Vault/m_pwd.dat', 'wb') as pf:
         pickle.dump(en_pwd, pf)
     print("Sucessfully encoded new Master Password!")
     return key
 
 def check_encrypted_password():
     salt = b""
-    with open('salt.dat', 'rb') as f:
+    with open('PWD_Vault/PWD_Vault/salt.dat', 'rb') as f:
         salt = f.read()
       
     pwd_d = getpass("Enter Master Password\n> ")
-    with open('m_pwd.dat', 'rb') as pf:
-        hashed = pickle.load(pf)
-        
-    global check_pwd
-    key = PBKDF2(pwd_d, salt)
-    en_pwd = B_PBKDF2(key, salt)
-    check_pwd = (en_pwd == hashed)
-    return key
+    try:
+        with open('PWD_Vault/PWD_Vault/m_pwd.dat', 'rb') as pf:
+            hashed = pickle.load(pf)
+        global check_pwd
+        key = PBKDF2(pwd_d, salt)
+        en_pwd = B_PBKDF2(key, salt)
+        check_pwd = (en_pwd == hashed)
+        return key
 
+    except EOFError as e:
+        print(f"Master Key Emprty")
 
 if __name__ == '__main__': 
     encrypt()

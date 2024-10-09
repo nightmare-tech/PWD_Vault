@@ -47,7 +47,7 @@ def entryc():
             service = input("Enter the name of ````website/ service provider```:\n> ")
             user = input("Enter the ```username/ email-id``` by which the password is stored:\n> ")  
 
-            n_choice = input("Suggest Password?(y/n) >")
+            n_choice = input("Suggest Password?(y/n) >").lower()
 
             if n_choice.lower() == 'y':
                 gen_pwd()
@@ -55,7 +55,7 @@ def entryc():
                 entry.writerow(l_dict)
                 print('Recorded Successfully!')
 
-            if n_choice.lower() == 'n':
+            if n_choice == 'n':
                 pwd_1 = input("Enter the ```Password```:\n Double check the password then hit Return\n> ")
                 pwd = input("Enter the ```Password``` again...\n> ")
                 if pwd_1 == pwd:
@@ -66,15 +66,15 @@ def entryc():
                 else:
                     print("The passowrds are not the same...\nThus not recorded...")
 
-            elif n_choice.lower() != 'y' and n_choice.lower() != 'n':
+            elif n_choice != 'y' and n_choice != 'n':
                 print("INVALID CHOICE!")
                 print("Not Recorded...")               
 
-            cont = input('Do you want to add another pwd?(y/n)')
-            if cont.lower() == 'n':
+            cont = input('Do you want to add another pwd?(y/n)').lower()
+            if cont == 'n':
                 print()
                 break
-            elif cont.lower() == 'y':
+            elif cont == 'y':
                 pass
             
             else:
@@ -100,9 +100,9 @@ def searchc():
             for col in row:
                 if col.lower() in query.lower():
                     print('|-------------------------------------------------------|')
-                    print('Website/Service   :',row[0])
-                    print('Username/Email-Id :',row[1])
-                    print('Password          :',row[2])        
+                    print(f'Website/Service   : {row[0]}')
+                    print(f'Username/Email-Id : {row[1]}')
+                    print(f'Password          : {row[2]}')        
                     print('|-------------------------------------------------------|')
         
         
