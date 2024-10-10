@@ -65,7 +65,7 @@ def decrypt_data(key):
 def encrypt_password():
     salt = os.urandom(16)
     
-    with open('PWD_Vault/PWD_Vault/salt.dat', 'wb') as f:
+    with open('salt.dat', 'wb') as f:
         f.write(salt)
        
     pwd_d = input("Enter NEW Master Password\n> ")
@@ -78,7 +78,7 @@ def encrypt_password():
 
 def check_encrypted_password():
     salt = b""
-    with open('PWD_Vault/PWD_Vault/salt.dat', 'rb') as f:
+    with open('salt.dat', 'rb') as f:
         salt = f.read()
       
     pwd_d = getpass("Enter Master Password\n> ")

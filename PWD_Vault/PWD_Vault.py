@@ -1,8 +1,16 @@
 import pickle
 from passlib.context import CryptContext
 from getpass import getpass
+from endecrypt import encrypt
+from endecrypt import decrypt
+from endecrypt import encrypt_password
+from endecrypt import check_encrypted_password
+from maincsv import gen_pwd
+from maincsv import entryc
+from maincsv import readc
+from maincsv import searchc
+from maincsv import deletec
 from endecrypt import *
-from maincsv import *
 from banners import *
 import random
 
@@ -29,7 +37,7 @@ def login_screen():
         |-------------------------------------------------------|
         |--------------------LOGIN SCREEN ----------------------|
         |-------------------------------------------------------|
-        |----1. Enter the Master Password ----------------------|
+        |----1. Enter/Create the Master Password----------------|
         |-------------------------------------------------------|
         |-------------------------------------------------------|
         |-------------------------------------------------------|

@@ -49,7 +49,7 @@ def entryc():
 
             n_choice = input("Suggest Password?(y/n) >").lower()
 
-            if n_choice.lower() == 'y':
+            if n_choice == 'y':
                 gen_pwd()
                 l_dict = {'Website/Service': service, 'Username/Email-Id': user, 'Password': g_pwd}
                 entry.writerow(l_dict)
