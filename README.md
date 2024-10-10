@@ -36,7 +36,7 @@ It is a very small repository. So, I didn't need another way to install it. And 
     source bin/activate
     ```
 
- 2. **Install the necessary packages, if this results in error it might the case of a lower C++ Version.Prefer installing the python modules manually**
+ 2. **Install the necessary packages. If this results in error it might the case of a lower C++ Version.Prefer installing the python modules manually**
     
     ```
     pip install -r requirements.txt
