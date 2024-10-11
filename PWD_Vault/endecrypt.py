@@ -36,12 +36,12 @@ def PBKDF2(data, salt):
 def encrypt(key):
     fernet = Fernet(key)
 
-    with open('PWD_Vault/PWD_Vault/data.csv', 'rb') as file:
+    with open('data.csv', 'rb') as file:
         original = file.read()
 
     encrypted = fernet.encrypt(original)
 
-    with open('PWD_Vault/PWD_Vault/data.csv', 'wb') as encrypted_file:
+    with open('data.csv', 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
 
 def decrypt(key):
@@ -52,7 +52,7 @@ def decrypt(key):
 def decrypt_data(key):
     try:
         fernet = Fernet(key)
-        with open('PWD_Vault/PWD_Vault/data.csv', 'rb') as enc_file:
+        with open('data.csv', 'rb') as enc_file:
             encrypted = enc_file.read()
 
         decrypted = fernet.decrypt(encrypted)
@@ -71,7 +71,7 @@ def encrypt_password():
     pwd_d = input("Enter NEW Master Password\n> ")
     key = PBKDF2(pwd_d, salt)
     en_pwd = B_PBKDF2(key, salt)
-    with open('PWD_Vault/PWD_Vault/m_pwd.dat', 'wb') as pf:
+    with open('m_pwd.dat', 'wb') as pf:
         pickle.dump(en_pwd, pf)
     print("Sucessfully encoded new Master Password!")
     return key
@@ -83,7 +83,7 @@ def check_encrypted_password():
       
     pwd_d = getpass("Enter Master Password\n> ")
     try:
-        with open('PWD_Vault/PWD_Vault/m_pwd.dat', 'rb') as pf:
+        with open('m_pwd.dat', 'rb') as pf:
             hashed = pickle.load(pf)
         global check_pwd
         key = PBKDF2(pwd_d, salt)

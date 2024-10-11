@@ -10,7 +10,6 @@ from maincsv import entryc
 from maincsv import readc
 from maincsv import searchc
 from maincsv import deletec
-from endecrypt import *
 from banners import *
 import random
 
@@ -27,19 +26,15 @@ def banner_p():
 def login_screen():
     global key
     try:
-        
-        if not os.path.exists('salt.dat') or not os.path.exists('m_pwd.dat'):
-            print("Run the first-time-setup first (option 's')...")
-            login_screen()
-            return 
 
         login_interface = """
         |-------------------------------------------------------|
         |--------------------LOGIN SCREEN ----------------------|
         |-------------------------------------------------------|
-        |----1. Enter/Create the Master Password----------------|
+        |----1. Enter the Master Password-----------------------|
         |-------------------------------------------------------|
         |-------------------------------------------------------|
+        |--s = First-Time-Setup (Only run this once) -----------|
         |-------------------------------------------------------|
         |-------------------------------------------------------|
         |-------------------------------------------------------|    
@@ -60,17 +55,17 @@ def login_screen():
                     decrypt(key)  
                     main_menu()
                 else:
-                    if is_file_empty('PWD_Vault/PWD_Vault/salt.dat') and is_file_empty("PWD_Vault/PWD_Vault/m_pwd.dat"):
-                        print('Please Perform the First-time Set-up\n')
-                        key = encrypt_password()
-                        print('\n')
-                        print('Great! Now remember the master passwrd that you encoded as it will not be provided again in future...')
-                        print("'Remember one Strong Password than a 100 weak ones...'")
-                        input("Hit Enter to go to the main menu...> ")
-                        main_menu()
-                    else:
-                        print('Wrong Password!!')
-                        login_screen()
+                    print('Wrong Password!!')
+                    login_screen()
+            
+            case 's':
+                print('Please Perform the First-time Set-up\n')
+                key = encrypt_password()
+                print('\n')
+                print('Great! Now remember the master passwrd that you encoded as it will not be provided again in future...')
+                print("'Remember one Strong Password than a 100 weak ones...'")
+                input("Hit Enter to go to the main menu...> ")
+                main_menu()
 
             case 'h':
                 with open('PWD_Vault/PWD_Vault/help.txt', 'r') as manual:
