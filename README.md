@@ -36,13 +36,15 @@ It is a very small repository. So, I didn't need another way to install it. And 
     source bin/activate
     ```
 
- 2. **Install the necessary packages. If this results in error it might the case of a lower C++ Version.Prefer installing the python modules manually**
-    
+ 2. **Install the necessary packages.**
+        
     ```
     pip install -r requirements.txt
     ```
+    If this produces an error it might the case of a lower C++ Version. You might have to install the python modules manually
 
- 3. **Run the script**
+
+ 4. **Run the script**
 
     ```
     PWD_Vault.bat
@@ -64,8 +66,10 @@ It is a very small repository. So, I didn't need another way to install it. And 
     ./PWD_Vault.sh
     ```
 
-    The bash script checks if there is a virtual environment present, if not it makes a "venv" and installs the dependencies there but if you're using it again then it will detect the "venv", activate it and run the script and deactivate the "venv" after exiting.
+    - The bash script checks if there is a virtual environment present, if not it makes a "venv" and installs the dependencies there but if you're using it again then it will detect the "venv", activate it and run the script and deactivate the "venv" after exiting.
     You're Welcome O:)
+    - If this produces an error it might the case of a lower C++ Version. You might have to install the python modules manually
+
 
 ---
 
