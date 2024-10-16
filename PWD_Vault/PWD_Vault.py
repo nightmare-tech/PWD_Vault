@@ -90,6 +90,9 @@ def login_screen():
     except FileNotFoundError:
         print('Run the first-time-setup first...')
         login_screen()
+    except KeyboardInterrupt:
+        print("\n!!!!!Use 'q' to exit!!!!")
+        login_screen()
         
 
 
